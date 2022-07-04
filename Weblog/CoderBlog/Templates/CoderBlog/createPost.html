@@ -1,0 +1,14 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Create Post</h1>
+<form action="{% url 'createPost' %}" method="POST">{% csrf_token %}
+    <h3>Enter the data.</h3>
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
